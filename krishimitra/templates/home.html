@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero">
+  <h1>{{ t('hero') }}</h1>
+  <p>{{ t('hero_sub') }}</p>
+  <a class="btn" href="{{ url_for('recommend') }}">{{ t('start') }}</a>
+</section>
+<section class="grid">
+  <a class="tile" href="{{ url_for('recommend') }}"><b>{{ t('recommend') }}</b><span>{{ t('top3') }}</span></a>
+  <a class="tile" href="{{ url_for('prices') }}"><b>{{ t('prices') }}</b><span>{{ t('price') }}</span></a>
+  <a class="tile" href="{{ url_for('schemes') }}"><b>{{ t('schemes') }}</b><span>PM-KISAN, PMFBY, KCC</span></a>
+  <a class="tile" href="{{ url_for('assistant') }}"><b>{{ t('assistant') }}</b><span>ಕನ್ನಡ / English</span></a>
+</section>
+{% endblock %}

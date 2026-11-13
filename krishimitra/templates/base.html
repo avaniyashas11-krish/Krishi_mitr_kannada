@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ t('app') }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <a class="brand" href="{{ url_for('home') }}">{{ t('app') }}</a>
+  <nav>
+    <a href="{{ url_for('home') }}">{{ t('home') }}</a>
+    <a href="{{ url_for('recommend') }}">{{ t('recommend') }}</a>
+    <a href="{{ url_for('prices') }}">{{ t('prices') }}</a>
+    <a href="{{ url_for('schemes') }}">{{ t('schemes') }}</a>
+    <a href="{{ url_for('assistant') }}">{{ t('assistant') }}</a>
+    <a href="{{ url_for('about') }}">{{ t('about') }}</a>
+  </nav>
+  <div class="right">
+    <a class="lang {{ 'on' if lang=='en' }}" href="{{ url_for('set_lang', code='en') }}">English</a>
+    <a class="lang {{ 'on' if lang=='kn' }}" href="{{ url_for('set_lang', code='kn') }}">ಕನ್ನಡ</a>
+    {% if session.user %}<a href="{{ url_for('logout') }}">{{ t('logout') }} ({{ session.user }})</a>
+    {% else %}<a href="{{ url_for('login') }}">{{ t('login') }}</a>{% endif %}
+  </div>
+</header>
+<main>
+  {% for m in get_flashed_messages() %}<p class="flash">{{ m }}</p>{% endfor %}
+  {% block body %}{% endblock %}
+</main>
+</body>
+</html>

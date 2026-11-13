@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block body %}
+<form class="card narrow" method="post">
+  <h2>{{ t('recommend') }}</h2>
+  <label>{{ t('district') }}
+    <select name="district">
+      {% for n, d in districts.items() %}<option value="{{ n }}" {{ 'selected' if result and result.name == n }}>{{ L((n, d.kn)) }}</option>{% endfor %}
+    </select></label>
+  <label>{{ t('crop') }}
+    <select name="crop">
+      {% for c, d in crops.items() %}<option value="{{ c }}" {{ 'selected' if result and result.crop == c }}>{{ L((c, d.kn)) }}</option>{% endfor %}
+    </select></label>
+  <button class="btn">{{ t('get') }}</button>
+</form>
+
+{% if result %}
+<h2>{{ t('top3') }}: {{ L((result.name, result.d.kn)) }}</h2>
+<div class="grid">
+  {% for c, pct in result.top3 %}
+  <div class="card">
+    <h3>{{ loop.index }}. {{ L((c, crops[c].kn)) }}</h3>
+    <div class="bar"><i style="width:{{ pct }}%"></i></div>
+    <p>{{ t('match') }}: <b>{{ pct }}%</b></p>
+    <p>{{ t('price') }}: <b>{{ crops[c].price[0] }} - {{ crops[c].price[1] }}</b></p>
+    <p>{{ t('season') }}: {{ L(crops[c].season) }}</p>
+    <p class="small">{{ t('tip') }}: {{ L(crops[c].tip) }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<p class="card">{{ t('yours') }}: <b>{{ L((result.crop, crops[result.crop].kn)) }}</b> - {{ t('match') }} {{ result.mine }}%</p>
+
+<div class="grid two">
+  <div class="card">
+    <h3>{{ t('soil') }}</h3>
+    <p>{{ L(result.d.soil) }}</p>
+    <p>pH {{ result.d.ph }} &nbsp; N {{ result.d.N }} &nbsp; P {{ result.d.P }} &nbsp; K {{ result.d.K }}</p>
+  </div>
+  <div class="card">
+    <h3>{{ t('weather') }}</h3>
+    <p>{{ t('rain') }}: {{ result.d.rain }} &nbsp; {{ t('temp') }}: {{ result.d.temp }}°C &nbsp; {{ t('hum') }}: {{ result.d.hum }}%</p>
+    {% if result.weather %}
+      <p>{{ t('live') }}: {{ result.weather.temp }}°C, {{ result.weather.hum }}%, {{ result.weather.rain }} mm</p>
+    {% else %}<p class="small">{{ t('offline') }}</p>{% endif %}
+  </div>
+</div>
+<p><a class="btn" href="{{ url_for('schemes') }}">{{ t('schemes') }}</a></p>
+{% endif %}
+{% endblock %}

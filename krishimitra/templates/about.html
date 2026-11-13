@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>{{ t('about') }}</h2>
+<div class="card">
+  <p>KrishiMitra - Crop Recommendation System for Karnataka farmers.</p>
+  <p>ML: Random Forest classifier on N, P, K, temperature, humidity, water (rain + irrigation) and soil pH.</p>
+  <p>NLP: language detection, Kannada word-ending normalisation, district / crop entity matching and intent detection.</p>
+  <p>Stack: Python, Flask, SQLite, scikit-learn, Open-Meteo weather API.</p>
+</div>
+{% endblock %}

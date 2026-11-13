@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>{{ t('schemes') }}</h2>
+<div class="grid">
+  {% for s in schemes %}
+  <div class="card">
+    <h3>{{ L(s.name) }}</h3>
+    <p>{{ L(s.desc) }}</p>
+    <a href="{{ s.link }}" target="_blank" rel="noopener">{{ t('visit') }}</a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

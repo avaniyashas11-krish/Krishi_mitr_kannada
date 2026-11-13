@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+<form class="card narrow" method="post">
+  <h2>{{ t('assistant') }}</h2>
+  <label>{{ t('ask') }}<input name="q" value="{{ q or '' }}" required></label>
+  <button class="btn">{{ t('send') }}</button>
+  <p class="small">Mysuru ಯಲ್ಲಿ ಯಾವ ಬೆಳೆ ಒಳ್ಳೆಯದು? / ರಾಗಿ ಬೆಲೆ ಎಷ್ಟು? / Soil in Raichur / loan schemes</p>
+</form>
+{% if reply %}<div class="card narrow"><h3>{{ t('reply') }}</h3><p>{{ reply }}</p></div>{% endif %}
+{% endblock %}

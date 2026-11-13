@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block body %}
+<h2>{{ t('prices') }}</h2>
+<table class="card">
+  <tr><th>{{ t('crop') }}</th><th>{{ t('price') }}</th><th>{{ t('season') }}</th></tr>
+  {% for c, d in crops.items() %}
+  <tr><td>{{ L((c, d.kn)) }}</td><td>{{ d.price[0] }} - {{ d.price[1] }}</td><td>{{ L(d.season) }}</td></tr>
+  {% endfor %}
+</table>
+<p class="small">{{ t('note') }}</p>
+{% endblock %}

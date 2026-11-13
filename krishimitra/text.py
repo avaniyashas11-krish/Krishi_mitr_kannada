@@ -1,0 +1,26 @@
+# text.py - all interface words in English and Kannada
+def p(en, kn): return {"en": en, "kn": kn}
+TEXT = {
+ "app": p("KrishiMitra", "ಕೃಷಿ ಮಿತ್ರ"),
+ "home": p("Home", "ಮುಖಪುಟ"), "login": p("Login", "ಲಾಗಿನ್"), "register": p("Register", "ನೋಂದಣಿ"),
+ "recommend": p("Crop advice", "ಬೆಳೆ ಶಿಫಾರಸು"), "prices": p("Market prices", "ಮಾರುಕಟ್ಟೆ ಬೆಲೆ"),
+ "schemes": p("Govt schemes", "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು"), "assistant": p("Ask a question", "ಪ್ರಶ್ನೆ ಕೇಳಿ"),
+ "about": p("About", "ಬಗ್ಗೆ"), "logout": p("Logout", "ಲಾಗ್ ಔಟ್"),
+ "username": p("Username", "ಬಳಕೆದಾರ ಹೆಸರು"), "password": p("Password", "ಪಾಸ್‌ವರ್ಡ್"),
+ "district": p("District", "ಜಿಲ್ಲೆ"), "crop": p("Crop you want to grow", "ನೀವು ಬೆಳೆಯಲು ಬಯಸುವ ಬೆಳೆ"),
+ "get": p("Get recommendation", "ಶಿಫಾರಸು ಪಡೆಯಿರಿ"), "top3": p("Best 3 crops for your district", "ನಿಮ್ಮ ಜಿಲ್ಲೆಗೆ ಉತ್ತಮ 3 ಬೆಳೆಗಳು"),
+ "soil": p("Soil information", "ಮಣ್ಣಿನ ಮಾಹಿತಿ"), "weather": p("Climate and weather", "ಹವಾಮಾನ"),
+ "price": p("Price (Rs/quintal)", "ಬೆಲೆ (₹/ಕ್ವಿಂಟಾಲ್)"), "season": p("Season", "ಋತು"), "match": p("Suitability", "ಹೊಂದಾಣಿಕೆ"),
+ "yours": p("Your chosen crop", "ನೀವು ಆರಿಸಿದ ಬೆಳೆ"), "ask": p("Type your question (English or Kannada)", "ನಿಮ್ಮ ಪ್ರಶ್ನೆ ಬರೆಯಿರಿ (ಕನ್ನಡ ಅಥವಾ English)"),
+ "send": p("Ask", "ಕೇಳಿ"), "rain": p("Rainfall (mm/year)", "ಮಳೆ (ಮಿಮೀ/ವರ್ಷ)"), "temp": p("Temperature", "ತಾಪಮಾನ"),
+ "hum": p("Humidity", "ತೇವಾಂಶ"), "live": p("Right now", "ಈಗಿನ ಹವಾಮಾನ"), "offline": p("Live weather not available (offline)", "ಲೈವ್ ಹವಾಮಾನ ಲಭ್ಯವಿಲ್ಲ (ಆಫ್‌ಲೈನ್)"),
+ "hero": p("Pick the right crop for your district", "ನಿಮ್ಮ ಜಿಲ್ಲೆಗೆ ಸರಿಯಾದ ಬೆಳೆ ಆರಿಸಿ"),
+ "hero_sub": p("Soil, weather, market price and government help in one place, in English and Kannada.", "ಮಣ್ಣು, ಹವಾಮಾನ, ಮಾರುಕಟ್ಟೆ ಬೆಲೆ, ಸರ್ಕಾರಿ ನೆರವು - ಎಲ್ಲವೂ ಒಂದೇ ಕಡೆ, ಕನ್ನಡ ಮತ್ತು English ನಲ್ಲಿ."),
+ "start": p("Start now", "ಈಗ ಪ್ರಾರಂಭಿಸಿ"), "visit": p("Visit website", "ವೆಬ್‌ಸೈಟ್ ನೋಡಿ"),
+ "bad_login": p("Wrong username or password.", "ತಪ್ಪಾದ ಬಳಕೆದಾರ ಹೆಸರು ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್."),
+ "exists": p("This username is taken. Choose another.", "ಈ ಹೆಸರು ಈಗಾಗಲೇ ಬಳಕೆಯಲ್ಲಿದೆ. ಬೇರೆ ಹೆಸರು ಆರಿಸಿ."),
+ "need_login": p("Please login first.", "ದಯವಿಟ್ಟು ಮೊದಲು ಲಾಗಿನ್ ಮಾಡಿ."),
+ "empty": p("Fill all fields.", "ಎಲ್ಲಾ ಮಾಹಿತಿ ತುಂಬಿರಿ."),
+ "tip": p("Tip", "ಸಲಹೆ"), "reply": p("Answer", "ಉತ್ತರ"),
+ "note": p("Prices are indicative. Check your local APMC mandi before selling.", "ಬೆಲೆಗಳು ಸೂಚಕ ಮಾತ್ರ. ಮಾರುವ ಮೊದಲು ನಿಮ್ಮ ಸ್ಥಳೀಯ ಎಪಿಎಂಸಿ ಮಂಡಿಯಲ್ಲಿ ಪರಿಶೀಲಿಸಿ."),
+}
